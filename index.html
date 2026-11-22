@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIÈRE Studio - Shine In Your Own Way</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; text-decoration:none; }
+body { font-family:'Inter',sans-serif; background:#FAF7F2; color:#1A1A1A; overflow-x:hidden; }
+/* INI KUNCINYA BIAR GA ADA GAMBAR GEDE LAGI */
+img { max-width:100%; display:block; }
+.wrapper { max-width:1100px; width:92%; margin:auto; }
+
+/* NAV */
+.logo a { font-size:26px; font-weight:700; font-family:'Playfair Display',serif; color:#1A1A1A; letter-spacing:3px; }
+.logo a::after { content:" • PARIS"; font-size:10px; color:#C9A227; vertical-align:super; }
+.nav-flex { display:flex; justify-content:space-between; align-items:center; }
+nav { padding:14px 0; position:relative; background:#FAF7F2; border-bottom:1px solid #E8DDC8; }
+nav ul { list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:2px; }
+nav ul li a { color:#1A1A1A; font-weight:500; padding:8px 9px; font-size:12px; text-transform:uppercase; }
+a.tbl-biru { background:#1A1A1A; padding:10px 16px; color:#fff; font-size:12px; }
+a.tbl-pink { background:#C9A227; padding:13px 26px; color:#fff; font-weight:600; font-size:13px; display:inline-block; margin-top:10px; }
+
+/* PAKSA BOOK NOW TURUN KE BARIS SENDIRI - ANTI NUMPUK */
+nav ul li:last-child {
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: 12px !important;
+    display: block !important;
+}
+nav ul li:last-child a {
+    display: inline-block !important;
+    padding: 12px 30px !important;
+    line-height: 1 !important;
+}
+nav ul {
+    row-gap: 0 !important;
+}
+  
+/* HOME / BANNER - UDAH DIKECILIN PAKSA */
+section { margin-bottom:50px; padding-top:20px; }
+.home-flex { display:flex; align-items:center; gap:25px; }
+.home-flex img { width:46% !important; height:300px !important; object-fit:cover; object-position:center top; border:1px solid #E8DDC8; padding:8px; background:#fff; flex-shrink:0; }
+.kolom { flex:1; min-width:0; }
+.kolom .deskripsi { font-size:11px; font-weight:600; color:#C9A227; letter-spacing:3px; text-transform:uppercase; }
+h2 { font-family:'Playfair Display',serif; font-size:40px; line-height:46px; margin-bottom:10px; }
+h2::after { content:""; display:block; width:55px; height:2px; background:#C9A227; margin-top:10px; }
+.tengah h2::after { margin:10px auto 0; }
+p { margin:10px 0; line-height:26px; color:#4A4A4A; font-size:15px; }
+.tengah { text-align:center; width:100%; }
+
+/* SERVICES */
+.service-list, .tutor-list, .partner-list { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+.kartu-service { width:23%; min-width:200px; background:#fff; padding:25px 16px; border:1px solid #E8DDC8; border-top:3px solid #C9A227; text-align:center; }
+.kartu-service h3 { font-family:'Playfair Display',serif; font-size:19px; }
+.kartu-service b { color:#C9A227; }
+
+/* TEAM */
+.kartu-tutor { width:22%; min-width:140px; background:#fff; padding:10px 10px 16px; border:1px solid #E8DDC8; }
+.kartu-tutor img { width:100% !important; height:200px !important; object-fit:cover; object-position:center top; }
+.kartu-tutor p { font-family:'Playfair Display',serif; font-weight:700; font-size:15px; line-height:20px; }
+.kartu-partner { width:30%; min-width:140px; background:#fff; border:1px solid #E8DDC8; padding:20px 10px; font-family:'Playfair Display',serif; letter-spacing:2px; font-size:13px; }
+
+/* PARTNER 4 KOTAK - 2x2 BIAR RAPI */
+.partner-list {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    margin-top: 20px !important;
+}
+.kartu-partner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 120px !important;
+    padding: 12px 8px !important;
+    background: #fff !important;
+    border: 1px solid #E8DDC8 !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+}
+.kartu-partner img {
+    max-width: 90% !important;
+    max-height: 45px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    filter: grayscale(100%) !important;
+}
+.kartu-partner span {
+    font-size: 9px !important;
+    letter-spacing: 1.5px !important;
+    color: #C9A227 !important;
+    font-weight: 700 !important;
+    font-family: 'Inter', sans-serif !important;
+}
+  
+/* FOOTER */
+#contact { background:#1A1A1A; padding:45px 0; }
+#contact h3 { color:#C9A227; font-family:'Playfair Display',serif; }
+#contact p { color:#D8D8D8; font-size:14px; }
+.footer { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:20px; }
+.footer-section { min-width:0; }
+#copyright { text-align:center; padding:20px 0; font-size:13px; }
+
+@media screen and (max-width:768px) {
+  .nav-flex { flex-direction:column; gap:8px; }
+  nav ul { justify-content:center; }
+  .home-flex { flex-direction:column; text-align:center; gap:12px; }
+  .home-flex img { width:100% !important; height:240px !important; }
+  h2 { font-size:30px; line-height:38px; }
+  h2::after { margin:10px auto 0; }
+  .kartu-service, .kartu-tutor { width:47%; }
+  .footer { grid-template-columns:1fr 1fr; }
+}
+@media screen and (max-width:480px) {
+  .footer { grid-template-columns:1fr; }
+  .kartu-service, .kartu-tutor, .kartu-partner { width:100%; }
+  .home-flex img { height:220px !important; }
+}
+</style>
+</head>
+<body>
+<nav><div class="wrapper nav-flex">
+<div class="logo"><a href="">LUMIÈRE</a></div>
+<div class="menu"><ul>
+<li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#team">Team</a></li><li><a href="#partners">Partners</a></li><li><a href="#contact">Contact</a></li><li><a href="#contact" class="tbl-biru">Book Now</a></li>
+</ul></div></div></nav>
+
+<div class="wrapper">
+<section id="home" class="home-flex">
+<img src="banner.png" alt="Lumiere Studio">
+<div class="kolom">
+<p class="deskripsi">Beauty & Fashion Studio 4-in-1</p>
+<h2>Shine In Your Own Way</h2>
+<p>Nail Art, Make Up, Desain Baju & Hairstyling dalam satu tempat. Datang dengan biasa, pulang jadi luar biasa.</p>
+<p><a href="#contact" class="tbl-pink">Ayo Booking</a></p>
+</div></section>
+
+<section id="services"><div class="tengah"><div class="kolom"><p class="deskripsi">Our Services</p><h2>Layanan Kami</h2><p>Semua yang kamu butuhkan untuk tampil bersinar, ada di sini.</p></div>
+<div class="service-list">
+<div class="kartu-service"><h3>💅 Nail Art</h3><p>Simple, 3D, Chrome, Cat Eye & Extension.</p><p><b>Mulai 75k</b></p></div>
+<div class="kartu-service"><h3>💄 Make Up Artist</h3><p>Wisuda, Kondangan, Prewedding & Photoshoot.</p><p><b>Mulai 250k</b></p></div>
+<div class="kartu-service"><h3>👗 Desain Baju</h3><p>Custom Dress, Permak & Desain Seragam.</p><p><b>Mulai 350k</b></p></div>
+<div class="kartu-service"><h3>💇‍♀️ Hairstylist</h3><p>Hairdo, Sanggul Modern, Hijab Styling & Coloring.</p><p><b>Mulai 100k</b></p></div>
+</div></div></section>
+
+<section id="team"><div class="tengah"><div class="kolom"><p class="deskripsi">Our Top Team</p><h2>Tim Kami</h2><p>Ditangani langsung oleh para ahli di bidangnya.</p></div>
+<div class="tutor-list">
+<div class="kartu-tutor"><img src="asa.jpg"><p>Asa - Nail Artist</p></div>
+<div class="kartu-tutor"><img src="momo.jpg"><p>Momo - Hairstylist</p></div>
+<div class="kartu-tutor"><img src="lara.jpg"><p>Lara - Make Up Artist</p></div>
+<div class="kartu-tutor"><img src="giselle.jpg"><p>Giselle - Fashion Designer</p></div>
+</div></div></section>
+
+<section id="partners">
+  <h2 class="section-title">Our Trusted Partners</h2>
+  <p class="section-subtitle">We collaborate with world-class brands to bring you the best quality.</p>
+  <div class="partner-list">
+    <div class="kartu-partner">
+      <img src="maybellin.jpg" alt="Maybelline">
+      <span>MAKEUP PARTNER</span>
+    </div>
+    <div class="kartu-partner">
+      <img src="opi.jpg" alt="OPI">
+      <span>NAIL ART PARTNER</span>
+    </div>
+    <div class="kartu-partner">
+      <img src="L'Oreal.jpg" alt="L'Oreal Professionnel">
+      <span>HAIR PARTNER</span>
+    </div>
+    <div class="kartu-partner">
+      <img src="h&m.jpg" alt="H&M">
+      <span>FASHION PARTNER</span>
+    </div>
+  </div>
+</section>
+
+<div id="contact"><div class="wrapper"><div class="footer">
+<div class="footer-section"><h3>LUMIÈRE Studio</h3><p>Beauty & Fashion Studio 4-in-1. Tempat kamu bersinar dengan gayamu sendiri.</p></div>
+<div class="footer-section"><h3>About</h3><p>Nail Art, MUA, Desain Baju & Hairstylist. One Stop Beauty Studio.</p></div>
+<div class="footer-section"><h3>Contact</h3><p>Jl. Melati No. 12, Trowulan</p><p>Instagram: @lumiere.studio</p><p>WhatsApp: 0812-3456-7890</p></div>
+<div class="footer-section"><h3>Social</h3><p>Instagram: @lumiere.studio</p><p>TikTok: @lumiere.studio</p></div>
+</div></div></div>
+<div id="copyright"><div class="wrapper">&copy; 2026 <b>LUMIÈRE Studio.</b> All Rights Reserved.</div></div>
+</body>
+</html>
